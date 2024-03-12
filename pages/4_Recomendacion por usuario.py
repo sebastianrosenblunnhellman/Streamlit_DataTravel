@@ -1,11 +1,14 @@
+# importamos librerias
 import streamlit as st
 import pandas as pd
 import pyarrow.parquet as pq
 import pyarrow as pa
 import ast
 from surprise.dump import load
-from functions.user_item import recomendacion_usuario
 import pyperclip
+
+# Importamos nuestra funcion de recomendación
+from functions.user_item import recomendacion_usuario
 
 # Lista predeterminada de ID de usuarios a recomendar
 user_ids = [
