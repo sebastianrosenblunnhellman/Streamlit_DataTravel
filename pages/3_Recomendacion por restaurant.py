@@ -3,7 +3,6 @@ import streamlit as st
 import pandas as pd
 import pyarrow.parquet as pq
 import pyarrow as pa
-import pickle
 
 st.set_page_config(page_title="Restaurant", page_icon="🍽️", layout="wide")
 

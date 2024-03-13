@@ -4,3 +4,4 @@ streamlit-lottie
 plotly
 pyarrow
 scikit-surprise
+scikit-learn
