@@ -75,7 +75,7 @@ st.markdown("---")
 
 
 # Carga de datos
-demograficos_path = r'data\data_demograficos.parquet'
+demograficos_path = "data\data_demograficos.parquet"
 
 table = pq.read_table(demograficos_path)
 merged_data = table.to_pandas()
