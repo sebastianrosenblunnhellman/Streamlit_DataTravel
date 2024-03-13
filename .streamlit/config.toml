@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#DBA200"  # Celeste azulado pastel
+backgroundColor = "#FFFFFF"  # Blanco
+secondaryBackgroundColor = "#64A7FA"  
+textColor = "#000000"  # Anaranjado apagado pastel
+font = "sans serif" 
