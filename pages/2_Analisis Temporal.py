@@ -2,11 +2,14 @@ import streamlit as st
 import plotly.graph_objects as go
 import pandas as pd
 import pyarrow.parquet as pq
+import numpy as np
+from sklearn.linear_model import LinearRegression
 
 st.set_page_config(page_title="Mapa temporal", page_icon="🕒", layout="wide")
 
 # Título de la página Streamlit
 st.title("Visualización temporal rápida")
+st.header("- Con media movil exponencial - ")
 
 #Línea divisoria
 st.markdown("---")
@@ -64,6 +67,42 @@ fig.update_layout(
 # Muestra el gráfico en Streamlit
 st.plotly_chart(fig)
 
-# Agrega el encabezado y la línea divisoria para la sección "Búsqueda Detallada"
-st.header("Búsqueda Detallada")
+# Agrega el encabezado y la línea divisoria para la sección "Prediccion a 5 años"
 st.markdown("---")
+# Cargar los datos desde el archivo Parquet
+file_path = 'data/data_grafico_temporal.parquet'
+table = pq.read_table(file_path)
+df = table.to_pandas()
+
+# Ajustar un modelo de regresión para cada categoría
+category_models = {}
+
+for category, group in df.groupby('category'):
+    X = group[['year', 'month']]
+    y = group['score']
+    model = LinearRegression()
+    model.fit(X, y)
+    category_models[category] = model
+
+# Función para predecir los puntajes para los próximos 5 años
+def predict_scores(category):
+    model = category_models[category]
+    future_years = np.arange(2022, 2027)
+    future_months = np.arange(1, 13)
+    predictions = []
+    for year in future_years:
+        for month in future_months:
+            predictions.append([year, month, model.predict([[year, month]])[0]])
+    return pd.DataFrame(predictions, columns=['year', 'month', 'predicted_score'])
+
+# Crear la aplicación con Streamlit
+st.title('Predicción de puntajes por categoría')
+st.header("- Proyección a 5 años -")
+
+
+category_list = df['category'].unique()
+selected_category = st.selectbox('Selecciona una categoría', category_list)
+
+if st.button('Predecir'):
+    predictions_df = predict_scores(selected_category)
+    st.write(predictions_df)
