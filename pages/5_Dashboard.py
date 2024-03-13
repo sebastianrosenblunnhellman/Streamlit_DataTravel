@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 # Make page
-st.set_page_config(page_title="Dashboard", page_icon=":tada:", layout="wide")
+st.set_page_config(page_title="Dashboard 📊", page_icon="📊", layout="wide")
 
 # Agrega un encabezado personalizado con CSS
 st.markdown("""
@@ -14,7 +14,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.subheader(":bar_chart: Dashboard")
-st.markdown("Explore las variables de forma interactiva con nuestro dashboard para entender las relaciones entre ellas. ")
+st.markdown("Explore los datos de forma interactiva con nuestro dashboard para entender las relaciones entre las variables. ")
 
 # Código HTML de incrustación
 looker_html = """

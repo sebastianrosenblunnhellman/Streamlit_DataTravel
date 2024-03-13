@@ -8,6 +8,9 @@ st.set_page_config(page_title="Heatmap Interactivo", page_icon="🔥", layout="w
 
 st.header("Visualización Geográfica Rápida")  # Agrega esta línea
 
+# Línea divisoria
+st.markdown("---")
+
 # Cargar los datos desde el archivo Parquet
 file_path = 'data/heatmap.parquet'
 table = pq.read_table(file_path)

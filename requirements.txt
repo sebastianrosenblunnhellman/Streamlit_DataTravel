@@ -4,4 +4,3 @@ streamlit-lottie
 plotly
 pyarrow
 scikit-surprise
-pyperclip
