@@ -7,7 +7,8 @@ import pickle
 
 def restaurantes_similares(restaurant_name, n_restaurants=5):
     # Cargar el modelo desde el archivo .pkl
-    with open('models/modelo_item_item.pkl', 'rb') as file:
+    path = r'models/modelo_item_item.pkl'
+    with open(path, 'rb') as file:
         model = pickle.load(file)
 
     # Cargar los datos desde el archivo Parquet
