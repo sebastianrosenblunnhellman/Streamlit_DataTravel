@@ -28,13 +28,13 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("""
-    En esta sección, te presentamos las funcionalidades que puedes realizar en nuestra app. 
-    
-    La pestaña **'Analisis Geografico'** presenta un heatmap interactivo de las zonas con mejor y peor 'score' por categoria de negocio.  
-    
-    Una vez vizulizados los mejores lugares para determina categoria se puede realizar una comparativa entre condados.
-    
-    Dicha comparativa añade indicadores demograficos al analisis.
+En esta sección, te presentamos las funcionalidades que puedes realizar en nuestra app.
+
+La pestaña **'Análisis Geográfico'** presenta un heatmap interactivo de las zonas con mejor y peor 'score' por categoría de negocio.
+
+Una vez visualizados los mejores lugares para determinada categoría, se puede realizar una comparativa entre condados.
+
+Dicha comparativa añade indicadores demográficos al análisis.
 """)
 
 with col2:
@@ -70,11 +70,12 @@ with col3:
 
 with col4:
     st.markdown("""
-    La pestaña **'Analisis temporal'**, por su parte, permite visualizar las tendencias por categoria de negocio a lo largo de los años y los meses.
 
-    Estos datos se disponivilizar a traves de un grafico de lineas interactivo que añade la media movil exponencial para evidencial la tendencia del mercado.
+La pestaña **'Análisis Temporal'**, por su parte, permite visualizar las tendencias por categoría de negocio a lo largo de los años y los meses.
 
-    Porteriormente se pueden realizar predicciones del puntaje por categoria con una proyeccion a 5 años, mes a mes, utilizando regresion lineal. 
+Estos datos se disponibilizan a través de un gráfico de líneas interactivo que añade la media móvil exponencial para evidenciar la tendencia del mercado.
+
+Posteriormente se pueden realizar predicciones del puntaje por categoría con una proyección a 5 años, mes a mes, utilizando regresión lineal.
     """)
 
 st.markdown("---") 
